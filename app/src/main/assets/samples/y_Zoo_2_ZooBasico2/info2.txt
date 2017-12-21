@@ -1,0 +1,12 @@
+POSICIONAMIENTO DE VARIAS IMÁGENES EN PANTALLA
+
+Nuevos archivos necesarios:
+- assets/chinchilla.png
+- assets/penguin.png
+- assets/skunk.png
+- assets/squirrel.png
+- assets/walrus.png
+
+Principales cambios:
+- Ahora tenemos un array con información de todos los animales para trabajar directamente con él (this.animalsInfo)
+- Para crear AR.ImageDrawables, como en lugar de un único animal tenemos varios animales, empleamos un FOR para iterar sobre el array con información de los animales y así crear un AR.ImageDrawable para cada animal

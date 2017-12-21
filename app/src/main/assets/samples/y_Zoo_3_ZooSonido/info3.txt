@@ -1,0 +1,13 @@
+EMISIÓN DE UN RUIDO QUE SE CORRESPONDA CON CADA UNO DE LOS ANIMALES AL HACER CLIC SOBRE ELLOS
+
+Nuevos archivos necesarios:
+- assets/chinchilla.mp3
+- assets/donkey.mp3
+- assets/penguin.mp3
+- assets/skunk.mp3
+- assets/squirrel.mp3
+- assets/walrus.mp3
+
+Principales cambios:
+- En cada uno de los elementos del array this.animalsInfo se ha añadio un nuevo elemento llamado sound en el que se le indica un archivo MP3 asociado con cada uno de los animales
+- Se asocia un evento onClick a cada uno de los AR.ImageDrawable de tal modo que cada vez que se hace clic sobre un animal se llama al método this.animalClicked

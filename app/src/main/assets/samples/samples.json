@@ -1,0 +1,77 @@
+[
+    {
+        "category_name": "Zoo",
+        "samples": [
+            {
+                "name": "Zoo Basico Objeto",
+                "path": "y_Zoo_1_ZooBasico1/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+
+                ],
+                "startupConfiguration": {
+                    "camera_resolution": "auto",
+                    "camera_position": "back"
+                }
+            },
+            {
+                "name": "Zoo Objetos Varios",
+                "path": "y_Zoo_2_ZooBasico2/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_resolution": "auto",
+                    "camera_position": "back"
+                }
+            },
+
+            {
+                "name": "Zoo Objetos Sonido",
+                "path": "y_Zoo_3_ZooSonido/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_resolution": "auto",
+                    "camera_position": "back"
+                }
+            },
+            {
+                "name": "Zoo Objetos Descripcion",
+                "path": "y_Zoo_4_ZooDescripcion/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_resolution": "auto",
+                    "camera_position": "back"
+                }
+            },
+            {
+                "name": "Zoo Objetos Animacion",
+                "path": "y_Zoo_5_ZooAnimacion/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_resolution": "auto",
+                    "camera_position": "back"
+                }
+            },
+            {
+                "name": "Zoo Objetos Interactivo",
+                "path": "y_Zoo_6_ZooInteractivo/index.html",
+                "requiredFeatures": [
+                    "image_tracking"
+                ],
+                "startupConfiguration": {
+                    "camera_resolution": "auto",
+                    "camera_position": "back"
+                }
+            }
+            
+        ]
+    }
+
+    ]

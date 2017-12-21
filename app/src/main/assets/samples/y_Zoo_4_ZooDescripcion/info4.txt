@@ -1,0 +1,9 @@
+VISUALIZACIÓN DE INFORMACIÓN SOBRE CADA UNO DE LOS ANIMALES CUANDO SE HACE CLIC SOBRE ELLOS
+
+Nuevos archivos necesarios:
+- 
+
+Principales cambios:
+- Se pone en index.html un nuevo div para insertar dentro el nombre y la descripción del animal siempre y cuando se haga clic sobre él
+- Se introducen nuevos estilos en default.css para mostrar la información en pantalla (.infoAnimal, .infoAnimalVisible, .animalName y .animalDescription)
+- En el método this.animalClicked se introduce texto para cambiar el contenido de los elementos HTML (texto y clase visible)

@@ -1,0 +1,9 @@
+INSERCIÓN DE UN BOTÓN QUE AL PULSARLO HACE QUE SE ABRA UNA DETERMINADA URL
+
+Nuevos archivos necesarios:
+- assets/zoo.gif
+
+Principales cambios:
+- Se incluye un nuevo AR.ImageDrawable que se corresponde con la imagen zoo.gif y en el que se especifica las coordenadas y un evento a ejecutar cuando se hace clic sobre el botón (this.zooClicked)
+- Se inserta el AR.ImageDrawable como un nuevo elemento de la variable overlays (un nuevo elemento cam)
+- El método this.zooClicked abre el navegador Web y una URL
