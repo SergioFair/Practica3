@@ -48,6 +48,85 @@ var World = {
                 document.getElementById('loadingMessage').innerHTML = "<div> Error creando image trackable </div>";
 		    }
 		});
+		
+		
+		var imgDog = new AR.ImageResource("assets/dog.png");
+		var overlayDog = new AR.ImageDrawable(imgDog, 2, {
+            translate: {
+                x: -0.5,
+            },
+            onClick: function(){
+                responsiveVoice.speak("Dog");
+            }
+		});
+
+		this.pageDog = new AR.ImageTrackable(this.tracker, "doghouse", {
+		    drawables: {
+		        cam: overlayDog,
+		    },
+		    onImageRecognized: this.removeLoadingBarDog,
+		    onImageLost: this.worldLoaded,
+		    onError: function(errorMessage) {
+		        alert(errorMessage);
+                document.getElementById('loadingMessage').innerHTML = "<div> Error creando image trackable </div>";
+		    }
+		});
+		
+		
+		var imgChicken = new AR.ImageResource("assets/chicken.png");
+		var overlayChicken = new AR.ImageDrawable(imgChicken, 2, {
+            translate: {
+                x: -0.5,
+            },
+            onClick: function(){
+                responsiveVoice.speak("Chicken");
+            }
+		});
+
+		this.pageChicken = new AR.ImageTrackable(this.tracker, "henhouse", {
+		    drawables: {
+		        cam: overlayChicken,
+		    },
+		    onImageRecognized: this.removeLoadingBarChicken,
+		    onImageLost: this.worldLoaded,
+		    onError: function(errorMessage) {
+		        alert(errorMessage);
+                document.getElementById('loadingMessage').innerHTML = "<div> Error creando image trackable </div>";
+		    }
+		});
+		
+		
+		var imgHorse = new AR.ImageResource("assets/horse.png");
+		var overlayHorse = new AR.ImageDrawable(imgHorse, 2, {
+            translate: {
+                x: -0.5,
+            },
+            onClick: function(){
+                responsiveVoice.speak("Horse");
+            }
+		});
+		
+		var imgCow = new AR.ImageResource("assets/cow.png");
+		var overlayCow = new AR.ImageDrawable(imgCow, 2, {
+            translate: {
+                x:  1.0,
+			},
+            onClick: function(){
+                responsiveVoice.speak("Cow");
+            }
+		});
+		
+		this.pageBarn = new AR.ImageTrackable(this.tracker, "barn", {
+		    drawables: {
+		        cam: overlayHorse, overlayCow,
+		    },
+		    onImageRecognized: this.removeLoadingBarBarn,
+		    onImageLost: this.worldLoaded,
+		    onError: function(errorMessage) {
+		        alert(errorMessage);
+                document.getElementById('loadingMessage').innerHTML = "<div> Error creando image trackable </div>";
+		    }
+		});
 
 	},
 
@@ -59,10 +138,27 @@ var World = {
 	    }
 	},
 
-	removeLoadingBarHorse: function removeLoadingBarHorseFn() {
+	removeLoadingBarDog: function removeLoadingBarDogFn() {
+	    if(!World.loaded) {
+	        var e = document.getElementById('loadingMessage');
+	        e.innerHTML = "Si quieres saber como se dice 'perro' \n en inglés, pulsa en la imagen";
+	        World.loaded = true;
+	    }
+	},
+	
+	removeLoadingBarChicken: function removeLoadingBarChickenFn() {
+	    if(!World.loaded) {
+	        var e = document.getElementById('loadingMessage');
+	        e.innerHTML = "Si quieres saber como se dice 'Chicken' \n en inglés, pulsa en la imagen";
+	        World.loaded = true;
+	    }
+	},
+	
+	
+	removeLoadingBarBarn: function removeLoadingBarBarnFn() {
     	    if(!World.loaded) {
     	        var e = document.getElementById('loadingMessage');
-    	        e.innerHTML = "Si quieres saber como se dice 'caballo' en inglés, pulsa en la imagen";
+    	        e.innerHTML = "Si quieres saber como se dice 'caballo' o 'vaca' en inglés, pulsa en la imagen de cada animal";
     	        //e.parentElement.removeChild(e);
     	        World.loaded = true;
     	    }
