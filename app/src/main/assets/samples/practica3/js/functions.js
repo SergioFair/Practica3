@@ -5,7 +5,41 @@ var World = {
 
 	init: function initFn() {
 	    this.createOverlays();
+	    this.createModelAtLocation();
 	},
+
+	createModelAtLocation: function createModelAtLocationFn() {
+
+    		/*
+    			First a location where the model should be displayed will be defined
+    			. This location will be relativ to the user.
+    		*/
+    		var location = new AR.RelativeLocation(null, 5, 0, 2);
+
+    		/*
+    			Next the model object is loaded.
+    		*/
+    		var instrucciones = new AR.HtmlDrawable({html:"<div>La finalidad de nuestra aplicación es ayudar a<br>los niños. Sabemos lo importante que es aprender<br>inglés hoy en día, por eso queremos enseñarles<br>los nombres de algunos animales. La idea<br>es que el niño apunte a algún target (hogar<br>de algún animal), y automáticamente verá<br>a dicho animal, con el que podrá interactuar.</div>"}, 7, {
+                                  offsetX : 1,
+                                  backgroundColor: "#EEEEEE"
+                                });
+
+            var indicatorImage = new AR.ImageResource("assets/marker.png");
+
+            var indicatorDrawable = new AR.ImageDrawable(indicatorImage, 0.1, {
+                verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP
+            });
+
+    		/*
+    			Putting it all together the location and 3D model is added to an AR.GeoObject.
+    		*/
+    		var obj = new AR.GeoObject(location, {
+                drawables: {
+                   cam: [instrucciones],
+                   indicator: [indicatorDrawable]
+                }
+            });
+    	},
 
 	createOverlays: function createOverlaysFn(){
 	    this.targetCollectionResource = new AR.TargetCollectionResource("assets/practica3.wtc", {
@@ -188,12 +222,12 @@ var World = {
 	removeLoadingBarChicken: function removeLoadingBarChickenFn() {
 	    if(!World.loaded) {
 	        var e = document.getElementById('loadingMessage');
-	        e.innerHTML = "Si quieres saber como se dice 'Chicken' \n en inglés, pulsa en la imagen";
+	        e.innerHTML = "Si quieres saber como se dice 'Gallina' \n en inglés, pulsa en la imagen";
 	        World.loaded = true;
 	    }
 	},
-	
-	
+
+
 	removeLoadingBarBarn: function removeLoadingBarBarnFn() {
     	    if(!World.loaded) {
     	        var e = document.getElementById('loadingMessage');
@@ -226,6 +260,7 @@ var World = {
 
     worldLoaded: function worldLoadedFn(){
         document.getElementById('loadingMessage').innerHTML = "<div> ¿Quién vive aquí? </div>";
+        World.loaded = false;
     }
 };
 World.init();
