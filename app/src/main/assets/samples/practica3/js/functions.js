@@ -55,6 +55,27 @@ var World = {
 	    }
 	},
 
+
+	loadPois: function loadPoisFn(poiData) {		
+		
+		World.markerDrawable = new AR.ImageResource("assets/marker.png");
+
+		var currentLocation = new AR.GeoLocation(poiData.latitude, poiData.longitude, poiData.altitude);
+		// el marcador estará a 1 metro al norte del usuario
+		var markerLocation = new AR.RelativeLocation(geoLoc, 1,0, 0);
+		var markerImageDrawable_idle = new AR.ImageDrawable(World.markerDrawable, 2.5, {
+			zOrder: 0,
+			opacity: 1.0
+		});
+
+		// create GeoObject
+		var markerObject = new AR.GeoObject(markerLocation, {
+			drawables: {
+				cam: [markerImageDrawable_idle]
+			}
+		});
+	},		
+
     worldLoaded: function worldLoadedFn(){
         document.getElementById('loadingMessage').innerHTML = "<div> Mundo cargado </div>";
     }
