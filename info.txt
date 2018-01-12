@@ -1,0 +1,27 @@
+Clases utilizadas:
+	
+	- RelativeLocation: clase utilizada para establecer la localización relativa del POI que muestra las instrucciones.
+	
+	- GeoLocation: clase utilizada para obtener la posición geográfica del usuario. Posteriormente utilizada para la posición relativa del POI.
+	
+	- HTMLDrawable: clase utilizada para generar el POI que muestra las instrucciones.
+	
+	- ImageTracker: clase utilizada para cargar la colección de targets.
+	
+	- ImageTrackable: clase utilizada para identificar los targets con la cámara. Una vez que la cámara detecta un determinado target,
+						se ejecuta la funcionalidad especificada en el método onImageRecognized.
+	
+	- ImageResource: clase utilizada para almacenar una referencia a una imagen mediante una URI.
+	
+	- ImageDrawable: clase utilizada para representar la imagen referenciada por un ImageResource en realidad aumentada. Al hacer click
+						en la imagen se ejecuta el comando de voz de ResponsiveVoice que dice el nombre del animal en inglés.
+						
+	- GeoObject: clase utilizada para representar el archivo de instrucciones en realidad aumentada junto a su marcador correspondiente.
+	
+	- TargetCollectionResource: clase utilizada para cargar los targets almacenados en un archivo '.wtc'. Según si se cargan correctamente
+						o no, se mostrará un mensaje indicando la situación.
+
+
+Android:
+	- Versión mínima de Android: 19
+	- Versión objetivo de Android: 21
