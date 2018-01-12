@@ -1,9 +1,0 @@
-ANIMACIÓN PARA QUE LA IMAGEN DE LOS ANIMALES SE "MUEVA" CUANDO SE HACE CLIC
-
-Nuevos archivos necesarios:
-- 
-
-Principales cambios:
-- Se incluye un nuevo elemento a la información de cada uno de los animales (animation) en el que se guarda la animación que se quiere realizar cuando se pulsa (se hace clic) sobre el animal
-- Se incluye el método this.setAnimation en el que se define la animación (consiste en agrandar y reducir el tamaño de la imagen)
-- Se incluye en el método this.animalClicked una sentencia para que se inicie la animación justo cuando se hace clic sobre el animal

@@ -1,9 +1,0 @@
-RECONOCIMIENTO DE IMÁGENES Y POSOCIONAMIENTO DE UNA IMAGEN EN LA PANTALLA
-
-Nuevos archivos necesarios:
-- assets/donkey.png
-- assets/zoov71.wtc
-- Imagen de reconocimiento
-Principales cambios:
-- Se ha añadido código para trabajar con un tracker, el cual permite reconocer imágenes
-- Cuando se reconoce una de las imágenes del tracker (letsgoplay.jpg) - en realidad sólo habíamos metido esa - se muestra el burro en la pantalla

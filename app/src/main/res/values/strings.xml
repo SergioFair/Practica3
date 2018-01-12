@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">Practica3</string>
-    <string name="speech">Prueba speech</string>
-    <string name="wikitude">Experiencia Wikitude</string>
-    <string name="prueba_speech">This is just an example to try Google text to speech</string>
 </resources>
