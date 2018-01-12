@@ -28,9 +28,12 @@ var World = {
         });
 
 		var imgCat = new AR.ImageResource("assets/cat.png");
-		var overlayCat = new AR.ImageDrawable(imgCat, 5, {
+		var overlayCat = new AR.ImageDrawable(imgCat, 2, {
             translate: {
-                x: -0.15,
+                x: -0.5,
+            },
+            onClick: function(){
+                responsiveVoice.speak("Cat");
             }
 		});
 
@@ -38,7 +41,8 @@ var World = {
 		    drawables: {
 		        cam: overlayCat,
 		    },
-		    onImageRecognized: this.removeLoadingBar,
+		    onImageRecognized: this.removeLoadingBarCat,
+		    onImageLost: this.worldLoaded,
 		    onError: function(errorMessage) {
 		        alert(errorMessage);
                 document.getElementById('loadingMessage').innerHTML = "<div> Error creando image trackable </div>";
@@ -47,13 +51,22 @@ var World = {
 
 	},
 
-	removeLoadingBar: function removeLoadingBarFn() {
+	removeLoadingBarCat: function removeLoadingBarCatFn() {
 	    if(!World.loaded) {
 	        var e = document.getElementById('loadingMessage');
-	        e.parentElement.removeChild(e);
+	        e.innerHTML = "Si quieres saber como se dice 'gato' \n en inglés, pulsa en la imagen";
 	        World.loaded = true;
 	    }
 	},
+
+	removeLoadingBarHorse: function removeLoadingBarHorseFn() {
+    	    if(!World.loaded) {
+    	        var e = document.getElementById('loadingMessage');
+    	        e.innerHTML = "Si quieres saber como se dice 'caballo' en inglés, pulsa en la imagen";
+    	        //e.parentElement.removeChild(e);
+    	        World.loaded = true;
+    	    }
+    	},
 
 
 	loadPois: function loadPoisFn(poiData) {		
@@ -77,7 +90,7 @@ var World = {
 	},		
 
     worldLoaded: function worldLoadedFn(){
-        document.getElementById('loadingMessage').innerHTML = "<div> Mundo cargado </div>";
+        document.getElementById('loadingMessage').innerHTML = "<div> ¿Quién vive aquí? </div>";
     }
 };
 World.init();
