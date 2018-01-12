@@ -62,9 +62,12 @@ var World = {
         });
 
 		var imgCat = new AR.ImageResource("assets/cat.png");
-		var overlayCat = new AR.ImageDrawable(imgCat, 2, {
+		var overlayCat = new AR.ImageDrawable(imgCat, 0.4, {
             translate: {
-                x: -0.5,
+                x: 0.15,
+                y: 0.1,
+                horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
+                verticalAnchor: AR.CONST.VERTICAL_ANCHOR.BOTTOM,
             },
             onClick: function(){
                 responsiveVoice.speak("Cat");
@@ -85,9 +88,12 @@ var World = {
 		
 		
 		var imgDog = new AR.ImageResource("assets/dog.png");
-		var overlayDog = new AR.ImageDrawable(imgDog, 2, {
+		var overlayDog = new AR.ImageDrawable(imgDog, 0.5, {
             translate: {
                 x: -0.5,
+                y: -0.2,
+                horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.RIGHT,
+                verticalAnchor: AR.CONST.VERTICAL_ANCHOR.BOTTOM,
             },
             onClick: function(){
                 responsiveVoice.speak("Dog");
@@ -108,9 +114,9 @@ var World = {
 		
 		
 		var imgChicken = new AR.ImageResource("assets/chicken.png");
-		var overlayChicken = new AR.ImageDrawable(imgChicken, 2, {
+		var overlayChicken = new AR.ImageDrawable(imgChicken, 0.5, {
             translate: {
-                x: -0.5,
+                x: 0.3,
             },
             onClick: function(){
                 responsiveVoice.speak("Chicken");
@@ -131,9 +137,12 @@ var World = {
 		
 		
 		var imgHorse = new AR.ImageResource("assets/horse.png");
-		var overlayHorse = new AR.ImageDrawable(imgHorse, 2, {
+		var overlayHorse = new AR.ImageDrawable(imgHorse, 0.5, {
             translate: {
                 x: -0.5,
+                y: -0.3,
+                horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
+                verticalAnchor: AR.CONST.VERTICAL_ANCHOR.BOTTOM,
             },
             onClick: function(){
                 responsiveVoice.speak("Horse");
@@ -141,9 +150,12 @@ var World = {
 		});
 		
 		var imgCow = new AR.ImageResource("assets/cow.png");
-		var overlayCow = new AR.ImageDrawable(imgCow, 2, {
+		var overlayCow = new AR.ImageDrawable(imgCow, 0.5, {
             translate: {
-                x:  1.0,
+                x: 0.5,
+                y: -0.3,
+                horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.RIGHT,
+                verticalAnchor: AR.CONST.VERTICAL_ANCHOR.BOTTOM,
 			},
             onClick: function(){
                 responsiveVoice.speak("Cow");
@@ -152,9 +164,9 @@ var World = {
 		
 		this.pageBarn = new AR.ImageTrackable(this.tracker, "barn", {
 		    drawables: {
-		        cam: overlayHorse, overlayCow,
-		    },
-		    onImageRecognized: this.removeLoadingBarBarn,
+            	cam: [overlayHorse, overlayCow] ,
+            },
+            onImageRecognized: this.removeLoadingBarBarn,
 		    onImageLost: this.worldLoaded,
 		    onError: function(errorMessage) {
 		        alert(errorMessage);
