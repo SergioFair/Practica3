@@ -40,9 +40,18 @@ var World = {
             }
 		});
 
+		var overlayCatInfo = new AR.HtmlDrawable({
+                			uri: "assets/cat.html"
+                		}, 0.7, {
+                			viewportWidth: 400,
+                			viewportHeight: 120,
+                			backgroundColor: "#FFFFFF",
+                			translate: { x: -0.2, y: -0.5},
+                		});
+
 		this.pageCat = new AR.ImageTrackable(this.tracker, "cathouse", {
 		    drawables: {
-		        cam: overlayCat,
+		        cam: [overlayCat, overlayCatInfo] ,
 		    },
 		    onImageRecognized: this.removeLoadingBarCat,
 		    onImageLost: this.worldLoaded,
@@ -66,9 +75,18 @@ var World = {
             }
 		});
 
+		var overlayDogInfo = new AR.HtmlDrawable({
+        			uri: "assets/dog.html"
+        		}, 0.7, {
+        			viewportWidth: 400,
+        			viewportHeight: 120,
+        			backgroundColor: "#FFFFFF",
+        			translate: { x: 0.2, y: -0.5},
+        		});
+
 		this.pageDog = new AR.ImageTrackable(this.tracker, "doghouse", {
 		    drawables: {
-		        cam: overlayDog,
+		        cam: [overlayDog, overlayDogInfo] ,
 		    },
 		    onImageRecognized: this.removeLoadingBarDog,
 		    onImageLost: this.worldLoaded,
@@ -89,9 +107,18 @@ var World = {
             }
 		});
 
+		var overlayChickenInfo = new AR.HtmlDrawable({
+                			uri: "assets/chicken.html"
+                		}, 0.7, {
+                			viewportWidth: 400,
+                			viewportHeight: 120,
+                			backgroundColor: "#FFFFFF",
+                			translate: { x: -0.3, y: 0.5},
+                		});
+
 		this.pageChicken = new AR.ImageTrackable(this.tracker, "henhouse", {
 		    drawables: {
-		        cam: overlayChicken,
+		        cam: [overlayChicken, overlayChickenInfo] ,
 		    },
 		    onImageRecognized: this.removeLoadingBarChicken,
 		    onImageLost: this.worldLoaded,
