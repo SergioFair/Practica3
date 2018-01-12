@@ -27,8 +27,8 @@ var World = {
             }
         });
 
-		this.imgCat = new AR.ImageResource("assets/cat.png");
-		this.overlayCat = new AR.ImageDrawable(imgCat, 5, {
+		var imgCat = new AR.ImageResource("assets/cat.png");
+		var overlayCat = new AR.ImageDrawable(imgCat, 5, {
             translate: {
                 x: -0.15,
             }
@@ -47,7 +47,7 @@ var World = {
 
 	},
 
-	removeLoadingBar: function() {
+	removeLoadingBar: function removeLoadingBarFn() {
 	    if(!World.loaded) {
 	        var e = document.getElementById('loadingMessage');
 	        e.parentElement.removeChild(e);
