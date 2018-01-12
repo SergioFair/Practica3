@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             architectView.onPostCreate();
         }
         try{
-            this.architectView.load("practica3/index.html");
+            this.architectView.load("samples/practica3/index.html");
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE
                             , Manifest.permission.ACCESS_COARSE_LOCATION
